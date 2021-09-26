@@ -36,7 +36,13 @@ public class LoginUsuarioSteps {
     public void oSistemaExibeAMensagemDe() {
         assertTrue(driver.findElement(By.xpath("//body/div[@id='page']/div[2]/div[1]/div[3]/div[1]/div[1]")).isDisplayed());
         //assertTrue(driver.findElement(By.xpath("//li[contains(text(),'Authentication failed.')]")).isDisplayed());
-        
+
+    }
+
+    public void realizarLogin(String email, String senha) {
+        adicionarOEmailEmALREADYREGISTERED(email);
+        informarSenhaNoCampoPassword(senha);
+        vouLogarNoSistema();
     }
 
 }

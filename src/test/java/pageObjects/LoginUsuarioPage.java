@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static utils.Utils.Na;
+
 public class LoginUsuarioPage {
     @FindBy(id = "email")
     public WebElement inputLoginEmail;
@@ -26,6 +28,7 @@ public class LoginUsuarioPage {
     }
 
     public void realizarLogin(String email, String senha) {
+        Na(TelaInicialPage.class).acionarBotaoSingin();
         informarLoginEmail(email);
         informarLoginSenha(senha);
         acionarBotaoLogar();
