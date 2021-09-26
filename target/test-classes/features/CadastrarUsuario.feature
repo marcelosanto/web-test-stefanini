@@ -4,6 +4,13 @@
 @CadastrarUsuario
 Funcionalidade: Cadastrar usuario
 
+  @cadastroInvalido
+  Cenario: email invalido
+    Quando eu acionar o botao Sign in
+    E adicionar o email "koasdkoskadoksado" em CREATE AN ACCOUNT
+    E acionar o botao CREATE AN ACCOUNT
+    Entao o sistema exibe a mensagem de "Invalid email address."
+
   @cadastro
   Cenario: cadastrar usuario
     Quando eu acionar o botao Sign in

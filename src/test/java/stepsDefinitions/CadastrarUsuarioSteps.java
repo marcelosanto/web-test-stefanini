@@ -2,10 +2,13 @@ package stepsDefinitions;
 
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import org.openqa.selenium.By;
 import pageObjects.CadastrarUsuarioPage;
 import pageObjects.TelaInicialPage;
 
+import static org.junit.Assert.assertEquals;
 import static utils.Utils.Na;
+import static utils.Utils.driver;
 
 public class CadastrarUsuarioSteps {
     @Quando("eu acionar o botao Sign in")
@@ -85,4 +88,8 @@ public class CadastrarUsuarioSteps {
     }
 
 
+    @Entao("o sistema exibe a mensagem de {string}")
+    public void oSistemaExibeAMensagemDe(String msgError) {
+        assertEquals(msgError, driver.findElement(By.xpath("//li[contains(text(),'Invalid email address.')]")).getText());
+    }
 }

@@ -13,6 +13,12 @@ public class Hooks {
         acessarSistema();
     }
 
+    /*@Before(value = "not @LogarUsuario or not @CadastrarUsuario")
+    public void setUp() {
+        acessarSistema();
+        Na(LoginUsuarioPage.class).realizarLogin("lols@gmail.com", "12345678");
+    }*/
+
     @After()
     public void tearDown(Scenario scenario) {
         capturarTela(scenario);
